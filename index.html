@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Калькулятор</title>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=f5ed5ef3-01a9-4105-8ebb-003f33273586&lang=ru_RU&load=package.full"></script>
+</head>
+<body>
+    <p class="h1-calculate">Калькулятор стоимости заказа</p>
+    <form>
+        <section class="section-calculate">
+            <div>
+                <div class="otpravka otpravka1">
+                    <p class="h2-calculate">Отправка</p>
+                    <input type="text" placeholder="Адрес" class="address" id="from1">
+                    <div class="date-time-calculate">
+                        <div class="date-calculate">
+                            <p class="p-date-calculate">Дата отправки</p>
+                            <input type="date" class="date-input" id="date-input1">
+                        </div>
+                        <div class="time-calculate">
+                            <p class="p-time-calculate">Время отправки</p>
+                            <div class="time2-calculate">
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                                <p style="margin: 0 10px;">-</p>
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="h3-calculate">Данные о грузе</p>
+                    <input  autocomplete="off" role="combobox" list="" id="input1" name="gruz1" placeholder="Выберите тип груза" class="type-gruza-calculate">
+                    <datalist id="gruz1" role="listbox">
+                        <option>Автозапчасти грузовые</option>
+                        <option>Сборный груз</option>
+                        <option>Аккумуляторы незаряженные</option>
+                        <option>Бытовая техника без зав. упаковки</option>
+                        <option>Выставочное оборудование</option>
+                        <option>Двери</option>
+                        <option>Зоотовары</option>
+                        <option>Игрушки</option>
+                        <option>Кабель электрический</option>
+                        <option>Канцелярские товары</option>
+                        <option>Конверты</option>
+                        <option>Лакокрасочные материалы</option>
+                        <option>Мебель корпусная</option>
+                        <option>Мебель металлическая</option>
+                        <option>Мебель мягкая</option>
+                        <option>Медицинские товары</option>
+                        <option>Медицинское оборудование</option>
+                        <option>Оборудование</option>
+                        <option>Обувь</option>
+                        <option>Огнетушители</option>
+                        <option>Одежда</option>
+                        <option>Орг. техника в зав. упаковке</option>
+                        <option>Печатная продукция</option>
+                        <option>Пищевые добавки</option>
+                        <option>Пластик листовой</option>
+                        <option>Посуда</option>
+                        <option>Промышленное оборудование</option>
+                        <option>Профиль металлический</option>
+                        <option>Рекламная продукция</option>
+                        <option>Садово-огородный инвентарь</option>
+                        <option>Сантехника</option>
+                        <option>Сварочная техника и материалы</option>
+                        <option>Спортивные тренажеры</option>
+                        <option>Строительные материалы</option>
+                        <option>Сувенирная продукция</option>
+                        <option>Текстиль</option>
+                        <option>Труба металлическая</option>
+                        <option>Упаковка</option>
+                        <option>Хоз. товары из пластика</option>
+                        <option>Ящик</option>
+                        <option>Автозапчасти хрупкие</option>
+                        <option>Бытовая техника в зав. упаковке</option>
+                        <option>Кафель</option>
+                        <option>Керамика</option>
+                        <option>Матрас</option>
+                        <option>Мебель пластиковая</option>
+                        <option>Металл. емкость любого V</option>
+                        <option>Орг. техника без зав. упаковки</option>
+                        <option>Пластиковая тара любого V</option>
+                        <option>Профиль пластиковый</option>
+                        <option>Резинотехн. изделия (РТИ)</option>
+                        <option>Стеклопакеты</option>
+                        <option>Товары народного потребления (ТНП)</option>
+                        <option>Труба  пластиковая</option>
+                        <option>Автозапчасти</option>
+                        <option>Автохимия</option>
+                        <option>Табачная продукция</option>
+                        <option>Инструменты</option>
+                        <option>Компьютеры, планшеты, смартфоны</option>
+                        <option>Личные вещи</option>
+                        <option>Автоаксессуары</option>
+                        <option>Сырье промышленное</option>
+                        <option>Металлопрокат (изделия из металла)</option>
+                        <option>Велосипеды</option>
+                        <option>Мототехника (мотозапчасти)</option>
+                        <option>Автомобильное стекло</option>
+                        <option>Стекло листовое</option>
+                        <option>Музыкальные инструменты</option>
+                        <option>Крепеж</option>
+                        <option>Полиграфическая продукция</option>
+                        <option>Косметическая продукция</option>
+                        <option>Хоз. товары</option>
+                        <option>Запчасти</option>
+                        <option>Изделия из камня</option>
+                        <option>Мебельная фурнитура</option>
+                        <option>Трубопроводная арматура</option>
+                        <option>Столешницы</option>
+                        <option>Автомобильный двигатель</option>
+                        <option>Квадрокоптер</option>
+                        <option>Беспилотные летательные аппараты</option>
+                        <option>Катушка</option>
+                        <option>Герметики</option>
+                        <option>Удобрения</option>
+                    </datalist>
+                    <div class="obem-ves-calculate">
+                        <div class="obem-calculate">
+                            <label for="obem" class="label-calculate">Объем, м3</label><br>
+                            <input type="text" value="0.01" id="obem" class="obem-input-calculate">
+                        </div>
+                        <div class="ves-calculate">
+                            <label for="ves" class="label-calculate">Вес, кг</label><br>
+                            <input type="text" value="2" id="ves" class="ves-input-calculate">
+                        </div>
+                    </div>
+                    <label for="mesta" class="label-calculate">Мест, шт</label><br>
+                    <input type="text" value="1" id="mesta" class="mesta-input-calculate">
+                    <div class="dobavit" id="dobavit11">Добавить</div>
+                </div>
+                <div class="otpravka otpravka2">
+                    <p class="h2-calculate">Отправка</p>
+                    <input type="text" placeholder="Адрес" class="address">
+                    <div class="date-time-calculate">
+                        <div class="date-calculate">
+                            <p class="p-date-calculate">Дата отправки</p>
+                            <input type="date" class="date-input" id="date-input1">
+                        </div>
+                        <div class="time-calculate">
+                            <p class="p-time-calculate">Время отправки</p>
+                            <div class="time2-calculate">
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                                <p style="margin: 0 10px;">-</p>
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="h3-calculate">Данные о грузе</p>
+                    <input  autocomplete="off" role="combobox" list="" id="input2" name="gruz2" placeholder="Выберите тип груза" class="type-gruza-calculate">
+                    <datalist id="gruz2" role="listbox">
+                        <option>Автозапчасти грузовые</option>
+                        <option>Сборный груз</option>
+                        <option>Аккумуляторы незаряженные</option>
+                        <option>Бытовая техника без зав. упаковки</option>
+                        <option>Выставочное оборудование</option>
+                        <option>Двери</option>
+                        <option>Зоотовары</option>
+                        <option>Игрушки</option>
+                        <option>Кабель электрический</option>
+                        <option>Канцелярские товары</option>
+                        <option>Конверты</option>
+                        <option>Лакокрасочные материалы</option>
+                        <option>Мебель корпусная</option>
+                        <option>Мебель металлическая</option>
+                        <option>Мебель мягкая</option>
+                        <option>Медицинские товары</option>
+                        <option>Медицинское оборудование</option>
+                        <option>Оборудование</option>
+                        <option>Обувь</option>
+                        <option>Огнетушители</option>
+                        <option>Одежда</option>
+                        <option>Орг. техника в зав. упаковке</option>
+                        <option>Печатная продукция</option>
+                        <option>Пищевые добавки</option>
+                        <option>Пластик листовой</option>
+                        <option>Посуда</option>
+                        <option>Промышленное оборудование</option>
+                        <option>Профиль металлический</option>
+                        <option>Рекламная продукция</option>
+                        <option>Садово-огородный инвентарь</option>
+                        <option>Сантехника</option>
+                        <option>Сварочная техника и материалы</option>
+                        <option>Спортивные тренажеры</option>
+                        <option>Строительные материалы</option>
+                        <option>Сувенирная продукция</option>
+                        <option>Текстиль</option>
+                        <option>Труба металлическая</option>
+                        <option>Упаковка</option>
+                        <option>Хоз. товары из пластика</option>
+                        <option>Ящик</option>
+                        <option>Автозапчасти хрупкие</option>
+                        <option>Бытовая техника в зав. упаковке</option>
+                        <option>Кафель</option>
+                        <option>Керамика</option>
+                        <option>Матрас</option>
+                        <option>Мебель пластиковая</option>
+                        <option>Металл. емкость любого V</option>
+                        <option>Орг. техника без зав. упаковки</option>
+                        <option>Пластиковая тара любого V</option>
+                        <option>Профиль пластиковый</option>
+                        <option>Резинотехн. изделия (РТИ)</option>
+                        <option>Стеклопакеты</option>
+                        <option>Товары народного потребления (ТНП)</option>
+                        <option>Труба  пластиковая</option>
+                        <option>Автозапчасти</option>
+                        <option>Автохимия</option>
+                        <option>Табачная продукция</option>
+                        <option>Инструменты</option>
+                        <option>Компьютеры, планшеты, смартфоны</option>
+                        <option>Личные вещи</option>
+                        <option>Автоаксессуары</option>
+                        <option>Сырье промышленное</option>
+                        <option>Металлопрокат (изделия из металла)</option>
+                        <option>Велосипеды</option>
+                        <option>Мототехника (мотозапчасти)</option>
+                        <option>Автомобильное стекло</option>
+                        <option>Стекло листовое</option>
+                        <option>Музыкальные инструменты</option>
+                        <option>Крепеж</option>
+                        <option>Полиграфическая продукция</option>
+                        <option>Косметическая продукция</option>
+                        <option>Хоз. товары</option>
+                        <option>Запчасти</option>
+                        <option>Изделия из камня</option>
+                        <option>Мебельная фурнитура</option>
+                        <option>Трубопроводная арматура</option>
+                        <option>Столешницы</option>
+                        <option>Автомобильный двигатель</option>
+                        <option>Квадрокоптер</option>
+                        <option>Беспилотные летательные аппараты</option>
+                        <option>Катушка</option>
+                        <option>Герметики</option>
+                        <option>Удобрения</option>
+                    </datalist>
+                    <div class="obem-ves-calculate">
+                        <div class="obem-calculate">
+                            <label for="obem" class="label-calculate">Объем, м3</label><br>
+                            <input type="text" value="0.01" id="obem" class="obem-input-calculate">
+                        </div>
+                        <div class="ves-calculate">
+                            <label for="ves" class="label-calculate">Вес, кг</label><br>
+                            <input type="text" value="2" id="ves" class="ves-input-calculate">
+                        </div>
+                    </div>
+                    <label for="mesta" class="label-calculate">Мест, шт</label><br>
+                    <input type="text" value="1" id="mesta" class="mesta-input-calculate">
+                    <div class="dobavit" id="dobavit12">Добавить</div>
+                </div>
+                <div class="otpravka otpravka3">
+                    <p class="h2-calculate">Отправка</p>
+                    <input type="text" placeholder="Адрес" class="address">
+                    <div class="date-time-calculate">
+                        <div class="date-calculate">
+                            <p class="p-date-calculate">Дата отправки</p>
+                            <input type="date" class="date-input" id="date-input1">
+                        </div>
+                        <div class="time-calculate">
+                            <p class="p-time-calculate">Время отправки</p>
+                            <div class="time2-calculate">
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                                <p style="margin: 0 10px;">-</p>
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="h3-calculate">Данные о грузе</p>
+                    <input  autocomplete="off" role="combobox" list="" id="input3" name="gruz3" placeholder="Выберите тип груза" class="type-gruza-calculate">
+                    <datalist id="gruz3" role="listbox">
+                        <option>Автозапчасти грузовые</option>
+                        <option>Сборный груз</option>
+                        <option>Аккумуляторы незаряженные</option>
+                        <option>Бытовая техника без зав. упаковки</option>
+                        <option>Выставочное оборудование</option>
+                        <option>Двери</option>
+                        <option>Зоотовары</option>
+                        <option>Игрушки</option>
+                        <option>Кабель электрический</option>
+                        <option>Канцелярские товары</option>
+                        <option>Конверты</option>
+                        <option>Лакокрасочные материалы</option>
+                        <option>Мебель корпусная</option>
+                        <option>Мебель металлическая</option>
+                        <option>Мебель мягкая</option>
+                        <option>Медицинские товары</option>
+                        <option>Медицинское оборудование</option>
+                        <option>Оборудование</option>
+                        <option>Обувь</option>
+                        <option>Огнетушители</option>
+                        <option>Одежда</option>
+                        <option>Орг. техника в зав. упаковке</option>
+                        <option>Печатная продукция</option>
+                        <option>Пищевые добавки</option>
+                        <option>Пластик листовой</option>
+                        <option>Посуда</option>
+                        <option>Промышленное оборудование</option>
+                        <option>Профиль металлический</option>
+                        <option>Рекламная продукция</option>
+                        <option>Садово-огородный инвентарь</option>
+                        <option>Сантехника</option>
+                        <option>Сварочная техника и материалы</option>
+                        <option>Спортивные тренажеры</option>
+                        <option>Строительные материалы</option>
+                        <option>Сувенирная продукция</option>
+                        <option>Текстиль</option>
+                        <option>Труба металлическая</option>
+                        <option>Упаковка</option>
+                        <option>Хоз. товары из пластика</option>
+                        <option>Ящик</option>
+                        <option>Автозапчасти хрупкие</option>
+                        <option>Бытовая техника в зав. упаковке</option>
+                        <option>Кафель</option>
+                        <option>Керамика</option>
+                        <option>Матрас</option>
+                        <option>Мебель пластиковая</option>
+                        <option>Металл. емкость любого V</option>
+                        <option>Орг. техника без зав. упаковки</option>
+                        <option>Пластиковая тара любого V</option>
+                        <option>Профиль пластиковый</option>
+                        <option>Резинотехн. изделия (РТИ)</option>
+                        <option>Стеклопакеты</option>
+                        <option>Товары народного потребления (ТНП)</option>
+                        <option>Труба  пластиковая</option>
+                        <option>Автозапчасти</option>
+                        <option>Автохимия</option>
+                        <option>Табачная продукция</option>
+                        <option>Инструменты</option>
+                        <option>Компьютеры, планшеты, смартфоны</option>
+                        <option>Личные вещи</option>
+                        <option>Автоаксессуары</option>
+                        <option>Сырье промышленное</option>
+                        <option>Металлопрокат (изделия из металла)</option>
+                        <option>Велосипеды</option>
+                        <option>Мототехника (мотозапчасти)</option>
+                        <option>Автомобильное стекло</option>
+                        <option>Стекло листовое</option>
+                        <option>Музыкальные инструменты</option>
+                        <option>Крепеж</option>
+                        <option>Полиграфическая продукция</option>
+                        <option>Косметическая продукция</option>
+                        <option>Хоз. товары</option>
+                        <option>Запчасти</option>
+                        <option>Изделия из камня</option>
+                        <option>Мебельная фурнитура</option>
+                        <option>Трубопроводная арматура</option>
+                        <option>Столешницы</option>
+                        <option>Автомобильный двигатель</option>
+                        <option>Квадрокоптер</option>
+                        <option>Беспилотные летательные аппараты</option>
+                        <option>Катушка</option>
+                        <option>Герметики</option>
+                        <option>Удобрения</option>
+                    </datalist>
+                    <div class="obem-ves-calculate">
+                        <div class="obem-calculate">
+                            <label for="obem" class="label-calculate">Объем, м3</label><br>
+                            <input type="text" value="0.01" id="obem" class="obem-input-calculate">
+                        </div>
+                        <div class="ves-calculate">
+                            <label for="ves" class="label-calculate">Вес, кг</label><br>
+                            <input type="text" value="2" id="ves" class="ves-input-calculate">
+                        </div>
+                    </div>
+                    <label for="mesta" class="label-calculate">Мест, шт</label><br>
+                    <input type="text" value="1" id="mesta" class="mesta-input-calculate">
+                    <div class="dobavit" id="dobavit13">Добавить</div>
+                </div>
+                <div class="otpravka otpravka4">
+                    <p class="h2-calculate">Отправка</p>
+                    <input type="text" placeholder="Адрес" class="address">
+                    <div class="date-time-calculate">
+                        <div class="date-calculate">
+                            <p class="p-date-calculate">Дата отправки</p>
+                            <input type="date" class="date-input" id="date-input1">
+                        </div>
+                        <div class="time-calculate">
+                            <p class="p-time-calculate">Время отправки</p>
+                            <div class="time2-calculate">
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                                <p style="margin: 0 10px;">-</p>
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="h3-calculate">Данные о грузе</p>
+                    <input  autocomplete="off" role="combobox" list="" id="input4" name="gruz4" placeholder="Выберите тип груза" class="type-gruza-calculate">
+                    <datalist id="gruz4" role="listbox">
+                        <option>Автозапчасти грузовые</option>
+                        <option>Сборный груз</option>
+                        <option>Аккумуляторы незаряженные</option>
+                        <option>Бытовая техника без зав. упаковки</option>
+                        <option>Выставочное оборудование</option>
+                        <option>Двери</option>
+                        <option>Зоотовары</option>
+                        <option>Игрушки</option>
+                        <option>Кабель электрический</option>
+                        <option>Канцелярские товары</option>
+                        <option>Конверты</option>
+                        <option>Лакокрасочные материалы</option>
+                        <option>Мебель корпусная</option>
+                        <option>Мебель металлическая</option>
+                        <option>Мебель мягкая</option>
+                        <option>Медицинские товары</option>
+                        <option>Медицинское оборудование</option>
+                        <option>Оборудование</option>
+                        <option>Обувь</option>
+                        <option>Огнетушители</option>
+                        <option>Одежда</option>
+                        <option>Орг. техника в зав. упаковке</option>
+                        <option>Печатная продукция</option>
+                        <option>Пищевые добавки</option>
+                        <option>Пластик листовой</option>
+                        <option>Посуда</option>
+                        <option>Промышленное оборудование</option>
+                        <option>Профиль металлический</option>
+                        <option>Рекламная продукция</option>
+                        <option>Садово-огородный инвентарь</option>
+                        <option>Сантехника</option>
+                        <option>Сварочная техника и материалы</option>
+                        <option>Спортивные тренажеры</option>
+                        <option>Строительные материалы</option>
+                        <option>Сувенирная продукция</option>
+                        <option>Текстиль</option>
+                        <option>Труба металлическая</option>
+                        <option>Упаковка</option>
+                        <option>Хоз. товары из пластика</option>
+                        <option>Ящик</option>
+                        <option>Автозапчасти хрупкие</option>
+                        <option>Бытовая техника в зав. упаковке</option>
+                        <option>Кафель</option>
+                        <option>Керамика</option>
+                        <option>Матрас</option>
+                        <option>Мебель пластиковая</option>
+                        <option>Металл. емкость любого V</option>
+                        <option>Орг. техника без зав. упаковки</option>
+                        <option>Пластиковая тара любого V</option>
+                        <option>Профиль пластиковый</option>
+                        <option>Резинотехн. изделия (РТИ)</option>
+                        <option>Стеклопакеты</option>
+                        <option>Товары народного потребления (ТНП)</option>
+                        <option>Труба  пластиковая</option>
+                        <option>Автозапчасти</option>
+                        <option>Автохимия</option>
+                        <option>Табачная продукция</option>
+                        <option>Инструменты</option>
+                        <option>Компьютеры, планшеты, смартфоны</option>
+                        <option>Личные вещи</option>
+                        <option>Автоаксессуары</option>
+                        <option>Сырье промышленное</option>
+                        <option>Металлопрокат (изделия из металла)</option>
+                        <option>Велосипеды</option>
+                        <option>Мототехника (мотозапчасти)</option>
+                        <option>Автомобильное стекло</option>
+                        <option>Стекло листовое</option>
+                        <option>Музыкальные инструменты</option>
+                        <option>Крепеж</option>
+                        <option>Полиграфическая продукция</option>
+                        <option>Косметическая продукция</option>
+                        <option>Хоз. товары</option>
+                        <option>Запчасти</option>
+                        <option>Изделия из камня</option>
+                        <option>Мебельная фурнитура</option>
+                        <option>Трубопроводная арматура</option>
+                        <option>Столешницы</option>
+                        <option>Автомобильный двигатель</option>
+                        <option>Квадрокоптер</option>
+                        <option>Беспилотные летательные аппараты</option>
+                        <option>Катушка</option>
+                        <option>Герметики</option>
+                        <option>Удобрения</option>
+                    </datalist>
+                    <div class="obem-ves-calculate">
+                        <div class="obem-calculate">
+                            <label for="obem" class="label-calculate">Объем, м3</label><br>
+                            <input type="text" value="0.01" id="obem" class="obem-input-calculate">
+                        </div>
+                        <div class="ves-calculate">
+                            <label for="ves" class="label-calculate">Вес, кг</label><br>
+                            <input type="text" value="2" id="ves" class="ves-input-calculate">
+                        </div>
+                    </div>
+                    <label for="mesta" class="label-calculate">Мест, шт</label><br>
+                    <input type="text" value="1" id="mesta" class="mesta-input-calculate">
+                    <div class="dobavit" id="dobavit14">Добавить</div>
+                </div>
+                <div class="otpravka otpravka5">
+                    <p class="h2-calculate">Отправка</p>
+                    <input type="text" placeholder="Адрес" class="address">
+                    <div class="date-time-calculate">
+                        <div class="date-calculate">
+                            <p class="p-date-calculate">Дата отправки</p>
+                            <input type="date" class="date-input" id="date-input1">
+                        </div>
+                        <div class="time-calculate">
+                            <p class="p-time-calculate">Время отправки</p>
+                            <div class="time2-calculate">
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                                <p style="margin: 0 10px;">-</p>
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="h3-calculate">Данные о грузе</p>
+                    <input  autocomplete="off" role="combobox" list="" id="input5" name="gruz5" placeholder="Выберите тип груза" class="type-gruza-calculate">
+                    <datalist id="gruz5" role="listbox">
+                        <option>Автозапчасти грузовые</option>
+                        <option>Сборный груз</option>
+                        <option>Аккумуляторы незаряженные</option>
+                        <option>Бытовая техника без зав. упаковки</option>
+                        <option>Выставочное оборудование</option>
+                        <option>Двери</option>
+                        <option>Зоотовары</option>
+                        <option>Игрушки</option>
+                        <option>Кабель электрический</option>
+                        <option>Канцелярские товары</option>
+                        <option>Конверты</option>
+                        <option>Лакокрасочные материалы</option>
+                        <option>Мебель корпусная</option>
+                        <option>Мебель металлическая</option>
+                        <option>Мебель мягкая</option>
+                        <option>Медицинские товары</option>
+                        <option>Медицинское оборудование</option>
+                        <option>Оборудование</option>
+                        <option>Обувь</option>
+                        <option>Огнетушители</option>
+                        <option>Одежда</option>
+                        <option>Орг. техника в зав. упаковке</option>
+                        <option>Печатная продукция</option>
+                        <option>Пищевые добавки</option>
+                        <option>Пластик листовой</option>
+                        <option>Посуда</option>
+                        <option>Промышленное оборудование</option>
+                        <option>Профиль металлический</option>
+                        <option>Рекламная продукция</option>
+                        <option>Садово-огородный инвентарь</option>
+                        <option>Сантехника</option>
+                        <option>Сварочная техника и материалы</option>
+                        <option>Спортивные тренажеры</option>
+                        <option>Строительные материалы</option>
+                        <option>Сувенирная продукция</option>
+                        <option>Текстиль</option>
+                        <option>Труба металлическая</option>
+                        <option>Упаковка</option>
+                        <option>Хоз. товары из пластика</option>
+                        <option>Ящик</option>
+                        <option>Автозапчасти хрупкие</option>
+                        <option>Бытовая техника в зав. упаковке</option>
+                        <option>Кафель</option>
+                        <option>Керамика</option>
+                        <option>Матрас</option>
+                        <option>Мебель пластиковая</option>
+                        <option>Металл. емкость любого V</option>
+                        <option>Орг. техника без зав. упаковки</option>
+                        <option>Пластиковая тара любого V</option>
+                        <option>Профиль пластиковый</option>
+                        <option>Резинотехн. изделия (РТИ)</option>
+                        <option>Стеклопакеты</option>
+                        <option>Товары народного потребления (ТНП)</option>
+                        <option>Труба  пластиковая</option>
+                        <option>Автозапчасти</option>
+                        <option>Автохимия</option>
+                        <option>Табачная продукция</option>
+                        <option>Инструменты</option>
+                        <option>Компьютеры, планшеты, смартфоны</option>
+                        <option>Личные вещи</option>
+                        <option>Автоаксессуары</option>
+                        <option>Сырье промышленное</option>
+                        <option>Металлопрокат (изделия из металла)</option>
+                        <option>Велосипеды</option>
+                        <option>Мототехника (мотозапчасти)</option>
+                        <option>Автомобильное стекло</option>
+                        <option>Стекло листовое</option>
+                        <option>Музыкальные инструменты</option>
+                        <option>Крепеж</option>
+                        <option>Полиграфическая продукция</option>
+                        <option>Косметическая продукция</option>
+                        <option>Хоз. товары</option>
+                        <option>Запчасти</option>
+                        <option>Изделия из камня</option>
+                        <option>Мебельная фурнитура</option>
+                        <option>Трубопроводная арматура</option>
+                        <option>Столешницы</option>
+                        <option>Автомобильный двигатель</option>
+                        <option>Квадрокоптер</option>
+                        <option>Беспилотные летательные аппараты</option>
+                        <option>Катушка</option>
+                        <option>Герметики</option>
+                        <option>Удобрения</option>
+                    </datalist>
+                    <div class="obem-ves-calculate">
+                        <div class="obem-calculate">
+                            <label for="obem" class="label-calculate">Объем, м3</label><br>
+                            <input type="text" value="0.01" id="obem" class="obem-input-calculate">
+                        </div>
+                        <div class="ves-calculate">
+                            <label for="ves" class="label-calculate">Вес, кг</label><br>
+                            <input type="text" value="2" id="ves" class="ves-input-calculate">
+                        </div>
+                    </div>
+                    <label for="mesta" class="label-calculate">Мест, шт</label><br>
+                    <input type="text" value="1" id="mesta" class="mesta-input-calculate">
+                </div>
+            </div>
+            
+            <div>
+                <div class="dostavka dostavka1">
+                    <p class="h2-calculate">Доставка</p>
+                    <input type="text" placeholder="Адрес" class="address" id="to1">
+                    <div class="date-time-calculate">
+                        <div class="date-calculate">
+                            <p class="p-date-calculate">Дата доставки</p>
+                            <input type="date" class="date-input" id="date-input2">
+                        </div>
+                        <div class="time-calculate">
+                            <p class="p-time-calculate">Время отправки</p>
+                            <div class="time2-calculate">
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                                <p style="margin: 0 10px;">-</p>
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="comment1" value="comment1">
+                    <label for="comment1" class="label-calculate">Комментарий водителю</label><br>
+                    <textarea name="comments1" id="comments1" rows="4" cols="40"></textarea>
+                    <div class="dobavit" id="dobavit21">Добавить</div>
+                </div>
+                <div class="dostavka dostavka2">
+                    <p class="h2-calculate">Доставка</p>
+                    <input type="text" placeholder="Адрес" class="address">
+                    <div class="date-time-calculate">
+                        <div class="date-calculate">
+                            <p class="p-date-calculate">Дата доставки</p>
+                            <input type="date" class="date-input" id="date-input2">
+                        </div>
+                        <div class="time-calculate">
+                            <p class="p-time-calculate">Время отправки</p>
+                            <div class="time2-calculate">
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                                <p style="margin: 0 10px;">-</p>
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="comment2" value="comment2">
+                    <label for="comment2" class="label-calculate">Комментарий водителю</label><br>
+                    <textarea name="comments2" id="comments2" rows="4" cols="40"></textarea>
+                    <div class="dobavit" id="dobavit22">Добавить</div>
+                </div>
+                <div class="dostavka dostavka3">
+                    <p class="h2-calculate">Доставка</p>
+                    <input type="text" placeholder="Адрес" class="address">
+                    <div class="date-time-calculate">
+                        <div class="date-calculate">
+                            <p class="p-date-calculate">Дата доставки</p>
+                            <input type="date" class="date-input" id="date-input2">
+                        </div>
+                        <div class="time-calculate">
+                            <p class="p-time-calculate">Время отправки</p>
+                            <div class="time2-calculate">
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                                <p style="margin: 0 10px;">-</p>
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="comment3" value="comment3">
+                    <label for="comment3" class="label-calculate">Комментарий водителю</label><br>
+                    <textarea name="comments3" id="comments3" rows="4" cols="40"></textarea>
+                    <div class="dobavit" id="dobavit23">Добавить</div>
+                </div>
+                <div class="dostavka dostavka4">
+                    <p class="h2-calculate">Доставка</p>
+                    <input type="text" placeholder="Адрес" class="address">
+                    <div class="date-time-calculate">
+                        <div class="date-calculate">
+                            <p class="p-date-calculate">Дата доставки</p>
+                            <input type="date" class="date-input" id="date-input2">
+                        </div>
+                        <div class="time-calculate">
+                            <p class="p-time-calculate">Время отправки</p>
+                            <div class="time2-calculate">
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                                <p style="margin: 0 10px;">-</p>
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="comment4" value="comment4">
+                    <label for="comment4" class="label-calculate">Комментарий водителю</label><br>
+                    <textarea name="comments4" id="comments4" rows="4" cols="40"></textarea>
+                    <div class="dobavit" id="dobavit24">Добавить</div>
+                </div>
+                <div class="dostavka dostavka5">
+                    <p class="h2-calculate">Доставка</p>
+                    <input type="text" placeholder="Адрес" class="address">
+                    <div class="date-time-calculate">
+                        <div class="date-calculate">
+                            <p class="p-date-calculate">Дата доставки</p>
+                            <input type="date" class="date-input" id="date-input2">
+                        </div>
+                        <div class="time-calculate">
+                            <p class="p-time-calculate">Время отправки</p>
+                            <div class="time2-calculate">
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                                <p style="margin: 0 10px;">-</p>
+                                <select class="time-select">
+                                    <option value="7:00">7:00</option>
+                                    <option value="7:30">7:30</option>
+                                    <option value="8:00">8:00</option>
+                                    <option value="8:30">8:30</option>
+                                    <option value="9:00">9:00</option>
+                                    <option value="9:30">9:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="comment5" value="comment5">
+                    <label for="comment5" class="label-calculate">Комментарий водителю</label><br>
+                    <textarea name="comments5" id="comments5" rows="4" cols="40"></textarea>
+                </div>
+            </div>
+        </section>
+        <input type="submit" value="Расчитать" class="submit-calculate" id="submit-calculate">
+    </form>
+</body>
+<script src="script.js"></script>
+</html>
